@@ -20,4 +20,33 @@ Note that an extra step is actually taken to normalize `xYears`, `projects` and 
 
 ### Pairing Algorithm
 The list of Developers are then sorted according to their calculated `experience`.
-Then the first is paired with the last and the second is paired with the second to the last and one and one.
+Then the first is paired with the last and the second is paired with the second to the last and on and on.
+
+## Example Usage
+```swift
+let testDevelopers: [Developer] = [
+    Developer(id: "Perfect", years: 3, projects: 15, langsKnown: 5),
+    Developer(id: "Jubril", years: 2, projects: 50, langsKnown: 4),
+    Developer(id: "Amarachi", years: 1, projects: 5, langsKnown: 4),
+    Developer(id: "Sao", years: 3, projects: 20, langsKnown: 4)
+]
+
+let listOfPairs = makePairFrom(developers: testDevelopers)
+for pairedDevelopers in listOfPairs! {
+    print("---Paired Team---")
+    for devs in pairedDevelopers {
+        print(devs)
+    }
+}
+```
+
+The output of the above code would be of the form:
+```swift
+---Paired Team---
+NormalizedDeveloper(id: "Sao", xYears: 0.75, projects: 2.5, pLangs: 0.25)
+NormalizedDeveloper(id: "Jubril", xYears: 0.25, projects: 27.5, pLangs: 0.25)
+---Paired Team---
+NormalizedDeveloper(id: "Perfect", xYears: 0.75, projects: 7.5, pLangs: 0.75)
+NormalizedDeveloper(id: "Amarachi", xYears: 1.25, projects: 17.5, pLangs: 0.25)
+```
+
