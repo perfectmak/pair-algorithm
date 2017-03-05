@@ -2,7 +2,7 @@
 
 This is an algorithm for pairing developers with different levels of experience and background.
 
-## How is works
+## How it works
 It calculates the experience of all developer's in a list, and then pairs the developers in order of increasing and reducing complexity.
 
 ### Developer Experience Algorithm
